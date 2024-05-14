@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 
 import userRouter from "./User.js";
 import movieRouter from "./Movie.js";
+import criticRouter from "./Critic.js";
 
 const routes = Router();
 
@@ -26,5 +27,6 @@ routes.use((request, response, next) => {
 });
 
 routes.use(movieRouter);
+routes.use(criticRouter)
 
 export default routes;

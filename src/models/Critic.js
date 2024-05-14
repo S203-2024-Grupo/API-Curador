@@ -2,9 +2,11 @@ import { DataTypes } from "sequelize";
 import { v4 as uuidv4 } from "uuid";
 
 import db from "../config/db.js";
-import { Critic } from "./Critic.js";
 
-export const User = db.define("User", {
+import { Movie } from "./Movie.js";
+import { User } from "./User.js";
+
+export const Critic = db.define("Critic", {
   id: {
     type: DataTypes.UUID,
     allowNull: false,
@@ -13,21 +15,21 @@ export const User = db.define("User", {
     defaultValue: uuidv4,
   },
 
-  username: {
-    type: DataTypes.STRING,
+  review: {
+    type: DataTypes.TEXT,
     allowNull: false,
   },
 
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-
-  password: {
-    type: DataTypes.STRING,
+  rating: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
 });
+
+Critic.belongsTo(User);
+Critic.belongsTo(Movie);
+
+User.hasMany(Critic);
+Movie.hasMany(Critic);
 
 await db.sync();
