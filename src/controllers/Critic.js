@@ -41,7 +41,7 @@ class CriticController {
 
     const critic = await Critic.create({
         review,
-        rating
+        rating,
     });
 
     return response.status(201).json(critic);
