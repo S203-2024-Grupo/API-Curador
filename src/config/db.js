@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 
 const db = new Sequelize(
   `postgres://${process.env.DB_USERNAME}:@${process.env.DB_URL}:5432/s203`,
-  {logging: true}
+  {logging: false}
 );
 
 try {

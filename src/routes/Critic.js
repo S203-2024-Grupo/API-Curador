@@ -10,7 +10,7 @@ criticRouter.get("/critic/movie/:id", (request, response) =>
 );
 
 criticRouter.get("/critic/user/:id", (request, response) =>
-  CriticController.find_by_movie(request, response),
+  CriticController.find_by_user(request, response),
 );
 
 criticRouter.post("/critic", (request, response) =>

@@ -1,6 +1,6 @@
 import { validate } from "uuid";
 import { Critic } from "../models/Critic.js";
-import { User } from "../models/User.js";
+import { Movie } from "../models/Movie.js";
 
 class CriticController {
 
@@ -11,7 +11,7 @@ class CriticController {
       return response.status(404).json({ message: "Invalid ID" });
     }
 
-    const critics = await Critic.findAll({ where: { MovieId: id } });
+    const critics = await Critic.findAll({ where: { movie_id: id } });
 
     if (!critics) {
       return response.status(404).json({ message: "Critics not found" });
@@ -27,7 +27,7 @@ class CriticController {
       return response.status(404).json({ message: "Invalid ID" });
     }
 
-    const critics = await Critic.findAll({ where: { UserId: id } });
+    const critics = await Critic.findAll({ where: { user_id: id } });
 
     if (!critics) {
       return response.status(404).json({ message: "Critics not found" });
@@ -38,22 +38,27 @@ class CriticController {
 
 
   async create(request, response) {
-    const { review, rating } = request.body;
+    const { review, rating, movie_id } = request.body;
 
     try {
-      if (!review || !rating) {
+      if (!review || !rating || !movie_id) {
         throw new Error("Missing fields");
       }
+
       const payload = JSON.parse(request.user.user);
       
       const user_id = payload.id;
-      
-      
+
+      const movie = await Movie.findOne({ where: { id: movie_id } });
+
+      if (!movie) throw new Error("Movie not found");
+
+
       const critic = await Critic.create({
           review,
           rating,
           user_id: user_id,
-        
+          movie_id: movie_id,
       });
       return response.status(201).json(critic);
       
