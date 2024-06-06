@@ -4,8 +4,8 @@ services:
         image: postgres:15
         env_file:
             - .env
-        volumes:
-            - postgres-db-volume:/var/lib/postgresql/data
+        # volumes:
+        #     - postgres-db-volume:/var/lib/postgresql/data
         ports:
             - 5432:5432
         networks:
@@ -22,13 +22,13 @@ services:
         networks:
             - postgres-db-network
 
-volumes:
-    postgres-db-volume:
-        driver: local
-        driver_opts:
-            type: none
-            o: bind
-            device: ./data
+# volumes:
+#     postgres-db-volume:
+#         driver: local
+#         driver_opts:
+#             type: none
+#             o: bind
+#             device: ./data
 networks:
     postgres-db-network:
         driver: bridge

@@ -1,8 +1,9 @@
 import { validate } from "uuid";
-
 import { Critic } from "../models/Critic.js";
+import { User } from "../models/User.js";
 
 class CriticController {
+
   async find_by_movie(request, response) {
     const { id } = request.params;
 
@@ -39,12 +40,28 @@ class CriticController {
   async create(request, response) {
     const { review, rating } = request.body;
 
-    const critic = await Critic.create({
-        review,
-        rating,
-    });
+    try {
+      if (!review || !rating) {
+        throw new Error("Missing fields");
+      }
+      const payload = JSON.parse(request.user.user);
+      
+      const user_id = payload.id;
+      
+      
+      const critic = await Critic.create({
+          review,
+          rating,
+          user_id: user_id,
+        
+      });
+      return response.status(201).json(critic);
+      
+    } catch (error) {
+      return response.status(400).json({ message: error.message });
+      
+    }
 
-    return response.status(201).json(critic);
   }
 
   async update(request, response) {

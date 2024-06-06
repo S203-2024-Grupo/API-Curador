@@ -30,18 +30,32 @@ class UserController {
   async create(request, response) {
     const { username, email, password } = request.body;
 
-    const hashedPassword = await hash(password, 10);
+    try {
+      if (!username || !email || !password) {
+        throw new Error("Missing fields");
+      }
 
-    
+      const emailExists = await User.findOne({ where: { email } });
 
-    const user = await User.create({
-      username,
-      email,
-      password: hashedPassword,
-    });
+      if (emailExists) {
+        throw new Error("Email already exists");
+      }
+      const hashedPassword = await hash(password, 10);
+      
+      const user = await User.create({
+        username,
+        email,
+        password: hashedPassword,
+      });
+  
+  
+      return response.status(201).json(user);
+      
+    } catch (error) {
+      return response.status(400).json({ message: error.message });
+      
+    }
 
-
-    return response.status(201).json(user);
   }
 
   async update(request, response) {
@@ -88,6 +102,7 @@ class UserController {
       if (!(await compare(password, user.password))) {
         return response.status(401).json({ message: "Senha incorreta" });
       }
+
 
       const token = jwt.sign(
         { user: JSON.stringify(user) },

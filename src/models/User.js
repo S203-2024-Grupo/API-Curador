@@ -1,8 +1,6 @@
 import { DataTypes } from "sequelize";
 import { v4 as uuidv4 } from "uuid";
-
 import db from "../config/db.js";
-import { Critic } from "./Critic.js";
 
 export const User = db.define("User", {
   id: {

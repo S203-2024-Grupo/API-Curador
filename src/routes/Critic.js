@@ -1,6 +1,7 @@
 import { Router } from "express";
-
 import CriticController from "../controllers/Critic.js";
+
+
 
 const criticRouter = Router();
 

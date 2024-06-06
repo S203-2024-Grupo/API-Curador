@@ -1,5 +1,5 @@
 import { validate } from "uuid";
-
+import { User } from "../models/User.js";
 import { Movie } from "../models/Movie.js";
 
 class MovieController {
@@ -28,15 +28,25 @@ class MovieController {
   async create(request, response) {
     const { name, description, score, genre, director } = request.body;
 
-    const movie = await Movie.create({
-      name,
-      description,
-      score,
-      genre,
-      director,
-    });
+    try {
+      if (!name || !description || !score || !genre || !director) {
+        throw new Error("Missing fields");
+      }
+  
+      const movie = await Movie.create({
+        name,
+        description,
+        score,
+        genre,
+        director,
+      });
+  
+      return response.status(201).json(movie);
+      
+    } catch (error) {
+      return response.status(400).json({ message: error.message });  
+    }
 
-    return response.status(201).json(movie);
   }
 
   async update(request, response) {
