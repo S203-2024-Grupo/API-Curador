@@ -28,4 +28,11 @@ export const User = db.define("User", {
   },
 });
 
-await db.sync();
+async function syncDb() {
+  await _db.default.sync();
+}
+
+syncDb().catch(console.error);
+
+
+// await db.sync();

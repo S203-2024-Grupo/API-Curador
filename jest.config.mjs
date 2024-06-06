@@ -9,6 +9,12 @@ const config = {
     "\\\\node_modules\\\\"
   ],
   coverageProvider: "v8",
+  transform: {},
+  transformIgnorePatterns: [
+    "/node_modules/",
+    "\\.pnp\\.[^\\/]+$",
+    "/src/config/db.js",
+  ],
 
 };
 
