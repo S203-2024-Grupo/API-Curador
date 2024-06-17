@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717709986893" clover="3.2.0">
-  <project timestamp="1717709986893" name="All files">
+<coverage generated="1718590319928" clover="3.2.0">
+  <project timestamp="1718590319928" name="All files">
     <metrics statements="612" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="12" coveredmethods="0" elements="636" coveredelements="0" complexity="0" loc="612" ncloc="612" packages="5" files="12" classes="12"/>
     <package name="src">
       <metrics statements="20" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="app.js" path="E:\s206\backend\projeto-S203\src\app.js">
+      <file name="app.js" path="/Users/mac/Desktop/API-Curador/src/app.js">
         <metrics statements="20" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -30,7 +30,7 @@
     </package>
     <package name="src.config">
       <metrics statements="15" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="db.js" path="E:\s206\backend\projeto-S203\src\config\db.js">
+      <file name="db.js" path="/Users/mac/Desktop/API-Curador/src/config/db.js">
         <metrics statements="15" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -51,7 +51,7 @@
     </package>
     <package name="src.controllers">
       <metrics statements="318" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="Critic.js" path="E:\s206\backend\projeto-S203\src\controllers\Critic.js">
+      <file name="Critic.js" path="/Users/mac/Desktop/API-Curador/src/controllers/Critic.js">
         <metrics statements="109" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -163,7 +163,7 @@
         <line num="108" count="0" type="stmt"/>
         <line num="109" count="0" type="stmt"/>
       </file>
-      <file name="Movie.js" path="E:\s206\backend\projeto-S203\src\controllers\Movie.js">
+      <file name="Movie.js" path="/Users/mac/Desktop/API-Curador/src/controllers/Movie.js">
         <metrics statements="89" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -255,7 +255,7 @@
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
       </file>
-      <file name="User.js" path="E:\s206\backend\projeto-S203\src\controllers\User.js">
+      <file name="User.js" path="/Users/mac/Desktop/API-Curador/src/controllers/User.js">
         <metrics statements="120" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -381,7 +381,7 @@
     </package>
     <package name="src.models">
       <metrics statements="140" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="Critic.js" path="E:\s206\backend\projeto-S203\src\models\Critic.js">
+      <file name="Critic.js" path="/Users/mac/Desktop/API-Curador/src/models/Critic.js">
         <metrics statements="60" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -444,7 +444,7 @@
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
       </file>
-      <file name="Movie.js" path="E:\s206\backend\projeto-S203\src\models\Movie.js">
+      <file name="Movie.js" path="/Users/mac/Desktop/API-Curador/src/models/Movie.js">
         <metrics statements="42" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -489,7 +489,7 @@
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
       </file>
-      <file name="User.js" path="E:\s206\backend\projeto-S203\src\models\User.js">
+      <file name="User.js" path="/Users/mac/Desktop/API-Curador/src/models/User.js">
         <metrics statements="38" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -533,7 +533,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="119" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="Critic.js" path="E:\s206\backend\projeto-S203\src\routes\Critic.js">
+      <file name="Critic.js" path="/Users/mac/Desktop/API-Curador/src/routes/Critic.js">
         <metrics statements="28" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -564,7 +564,7 @@
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
       </file>
-      <file name="Movie.js" path="E:\s206\backend\projeto-S203\src\routes\Movie.js">
+      <file name="Movie.js" path="/Users/mac/Desktop/API-Curador/src/routes/Movie.js">
         <metrics statements="27" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -594,7 +594,7 @@
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="User.js" path="E:\s206\backend\projeto-S203\src\routes\User.js">
+      <file name="User.js" path="/Users/mac/Desktop/API-Curador/src/routes/User.js">
         <metrics statements="31" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -628,7 +628,7 @@
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
       </file>
-      <file name="index.js" path="E:\s206\backend\projeto-S203\src\routes\index.js">
+      <file name="index.js" path="/Users/mac/Desktop/API-Curador/src/routes/index.js">
         <metrics statements="33" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>

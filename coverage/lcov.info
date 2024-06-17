@@ -1,5 +1,5 @@
 TN:
-SF:src\app.js
+SF:src/app.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -31,7 +31,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\config\db.js
+SF:src/config/db.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -58,7 +58,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\Critic.js
+SF:src/controllers/Critic.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -179,7 +179,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\Movie.js
+SF:src/controllers/Movie.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -280,7 +280,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\User.js
+SF:src/controllers/User.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -412,7 +412,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\models\Critic.js
+SF:src/models/Critic.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -484,7 +484,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\models\Movie.js
+SF:src/models/Movie.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -538,7 +538,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\models\User.js
+SF:src/models/User.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -588,7 +588,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\routes\Critic.js
+SF:src/routes/Critic.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -628,7 +628,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\routes\Movie.js
+SF:src/routes/Movie.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -667,7 +667,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\routes\User.js
+SF:src/routes/User.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
@@ -710,7 +710,7 @@ BRF:1
 BRH:0
 end_of_record
 TN:
-SF:src\routes\index.js
+SF:src/routes/index.js
 FN:1,(empty-report)
 FNF:1
 FNH:0
