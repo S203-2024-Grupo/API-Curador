@@ -3,3 +3,4 @@ dist/
 servers.json/
 data/
 .env
+mochawesome-report/
