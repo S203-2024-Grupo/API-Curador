@@ -1,6 +1,16 @@
 import { validate } from "uuid";
 import { Critic } from "../models/Critic.js";
 import { Movie } from "../models/Movie.js";
+import jwt from "jsonwebtoken";
+
+function verfy_token(request){
+  const authHeader = request.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  return token
+}
+function userId_by_Token(token){
+  return  JSON.parse(jwt.verify(token, process.env.PRIVATE_KEY).user).id;
+}
 
 class CriticController {
 
@@ -39,20 +49,17 @@ class CriticController {
 
   async create(request, response) {
     const { review, rating, movie_id } = request.body;
+    const token = verfy_token(request)
+    const user_id = userId_by_Token(token)
 
     try {
       if (!review || !rating || !movie_id) {
         throw new Error("Missing fields");
       }
 
-      const payload = JSON.parse(request.user.user);
-      
-      const user_id = payload.id;
-
       const movie = await Movie.findOne({ where: { id: movie_id } });
 
       if (!movie) throw new Error("Movie not found");
-
 
       const critic = await Critic.create({
           review,
@@ -61,23 +68,28 @@ class CriticController {
           movie_id: movie_id,
       });
       return response.status(201).json(critic);
-      
+
     } catch (error) {
       return response.status(400).json({ message: error.message });
-      
+
     }
 
   }
-
   async update(request, response) {
     const { id } = request.params;
     const { review, rating } = request.body;
+    const user_id = userId_by_Token(verfy_token(request))
 
     if (!validate(id)) {
       return response.status(404).json({ message: "Invalid ID" });
     }
 
     try {
+      const critic = await Critic.findOne({where:{id:id}})
+      if(critic.user_id != user_id){
+        return response.status(401).json({ message: "You cannot change other users' critics" })
+      }
+
       await Critic.update(
         { review, rating },
         { where: { id } },
@@ -91,12 +103,18 @@ class CriticController {
 
   async delete(request, response) {
     const { id } = request.params;
+    const user_id = userId_by_Token(verfy_token(request))
 
     if (!validate(id)) {
       return response.status(404).json({ message: "Invalid ID" });
     }
 
     try {
+      const critic = await Critic.findOne({where:{id:id}})
+      if(critic.user_id != user_id){
+        return response.status(401).json({ message: "You cannot delete other users' critics" })
+      }
+      
       await Critic.destroy({ where: { id } });
 
       return response.status(204).send();
